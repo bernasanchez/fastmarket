@@ -4,8 +4,8 @@ import NavBar from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '@fortawesome/fontawesome-free/js/fontawesome';
-// import '@fortawesome/fontawesome-free/js/solid';
-// import '@fortawesome/fontawesome-free/js/brands';
+import '@fortawesome/fontawesome-free/js/solid';
+import '@fortawesome/fontawesome-free/js/brands';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
         </a>
       </header> */}
       <NavBar />
-      <ItemListContainer greeting = 'Hola'/>
+      <ItemListContainer greeting = 'FAST MARKET'/>
 
 
     </div>
