@@ -16,7 +16,6 @@ function Item({title, imageCard, text, price}) {
                 <p className="card-text">{price}</p>
                 <Counter initial={1} stock={10} />
             </div>
-               
         </div>
     )
 }

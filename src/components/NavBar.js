@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import CartWidget from './CartWidget'
+import { Link } from 'react-router-dom';
 
 export default class NavBar extends Component {
     render() {

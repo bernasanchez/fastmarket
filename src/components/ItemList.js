@@ -2,6 +2,7 @@ import React, {useEffect} from 'react'
 import Item from './Item';
 import image1 from '../Assets/img/corona.jpg'
 import image2 from '../Assets/img/patagoniapack.jpg'
+import {Link} from 'react-router-dom'
 
 
 //Contenedor de Cards
@@ -41,10 +42,12 @@ function ItemList() {
                {
                 cards.map(card=>(
                     <div className="col-md-4" key={card.id}>
+                        <Link to={"item/"+card.id}>
                         <Item title={card.title} imageCard={card.image} text={card.text} price={card.price}/>
+                        </Link>
                     </div>
                 ))
-                 }
+                }
             </div>
         </div>
     )
