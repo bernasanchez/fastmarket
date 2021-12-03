@@ -1,39 +1,31 @@
-import { Component } from 'react'
-import CartWidget from './CartWidget'
+import { Component } from 'react';
+import CartWidget from './CartWidget';
+
 import { Link } from 'react-router-dom';
 
-export default class NavBar extends Component {
-    render() {
+function NavBar (){
+    
         return (
         <div>
           <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#">FASTMARKET</a>
+              <Link exact to="/" class="navbar-brand" >FASTMARKET</Link>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                   <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                  <Link exact to="/" class="nav-link active" aria-current="page" >HOME</Link>
                   </li>
-                  <li class="nav-item">
-                  <a class="nav-link" href="#">OFERTAS</a>
-                  </li>
-                  <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRODUCTOS</a>
+                  <li class="nav-item dropdown"> 
+                    <Link to="/category/:categoryId" class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRODUCTOS</Link>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                      <li><a class="dropdown-item" href="#">Bebidas</a></li>
-                      <li><a class="dropdown-item" href="#">Carnes y Pescados</a></li>
-                      <li><a class="dropdown-item" href="#">Frutas y Verduras</a></li>
-                      <li><a class="dropdown-item" href="#">Limpieza</a></li>
+                      <li><Link to="/category/bebidas" class="dropdown-item" >Bebidas</Link></li>
+                      <li><Link to="/category/carnes" class="dropdown-item" href="#">Carnes y Pescados</Link></li>
+                      <li><Link to="/category/frutas" class="dropdown-item" href="#">Frutas y Verduras</Link></li>
+                      <li><Link to="/category/limpieza" class="dropdown-item" href="#">Limpieza</Link></li>
                     </ul>
-                  </li>
-                  <li class="nav-item">
-                  <a class="nav-link" href="#">TIENDA</a>
-                  </li>
-                  <li class="nav-item">
-                  <a class="nav-link" href="#">CONTACTO</a>
                   </li>
                 </ul>
               </div>
@@ -45,5 +37,6 @@ export default class NavBar extends Component {
    
         </div>
         )
-    }
 }
+
+export default NavBar;
