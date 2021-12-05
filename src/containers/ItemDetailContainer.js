@@ -1,35 +1,27 @@
-import React, {useEffect, useState} from 'react'
-import ItemDetail from '../components/ItemDetail'
-import image2 from '../Assets/img/patagoniapack.jpg'
+import React, { useEffect, useState } from "react";
+import ItemDetail from "../components/ItemDetail";
+import { products } from "../products/products";
 
-const card ={
-    id: 2, 
-    title: 'Patagonia Pack',
-    image: image2,
-    text:'Cerveza Roja Pack 10u',
-    price: '$200',
-}
+export const ItemDetailContainer = ({ match }) => {
+  const [id, setId] = useState(null);
+  const [productItem, setProductItem] = useState(null);
 
+  useEffect(() => {
+    console.log("ItemDetailContainer");
+  }, []);
 
-export default function ItemDetailContainer() {
-    const [itemCard, setItemCard] = useState({});
-
-    function getItem (){
-        return new Promise((resolve, reject) =>{
-            setTimeout(() =>resolve(card), 2000);
-        });
+  useEffect(() => {
+    if (match?.params?.id) {
+      setId(match.params.id);
     }
+  }, [match]);
 
-    useEffect(() => {
-        getItem().then((resp) => {
-            console.log(resp);
-            setItemCard(resp);
-        });
-    }, []);
+  useEffect(() => {
+    if (id) {
+      const itemFromProducts = products.find(product => product.id == id);
+      setProductItem(itemFromProducts);
+    }
+  }, [id]);
 
-    return (
-        <div>
-            <ItemDetail item={itemCard} />
-        </div>
-    )
-}   
+  return <div>{productItem ? <ItemDetail item={productItem} /> : null}</div>;
+};

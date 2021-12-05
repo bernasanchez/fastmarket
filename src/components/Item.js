@@ -1,6 +1,6 @@
 import React from 'react'
 import './cards.css'
-import Counter from './Counter/Counter'
+
 
 
 
@@ -14,7 +14,6 @@ function Item({title, imageCard, text, price}) {
                 <h4 className="card-title">{title}</h4>
                 <p className="card-text">{text}</p>
                 <p className="card-text">{price}</p>
-                <Counter initial={1} stock={10} />
             </div>
         </div>
     )
